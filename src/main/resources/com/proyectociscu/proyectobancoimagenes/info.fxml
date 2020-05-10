@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #6BA7D6;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+   <children>
+      <Label layoutX="90.0" layoutY="145.0" text="Si usted tiene algun problema con nuestra aplicación">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="229.0" layoutY="172.0" text="envie un correo a:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="196.0" layoutY="221.0" text="ciscu6@gmail.com">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

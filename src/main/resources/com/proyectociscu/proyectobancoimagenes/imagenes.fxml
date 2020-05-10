@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #6BA7D6;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="54.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Imagenes/Imagen01.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="54.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Imagenes/Imagen02.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="115.0" fitWidth="200.0" layoutX="333.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Imagenes/Imagen03.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="115.0" fitWidth="200.0" layoutX="333.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Imagenes/Imagen04.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

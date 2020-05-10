@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #6BA7D6;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="167.0" layoutY="25.0" text="Informacion de la cuenta">
+         <font>
+            <Font name="Times New Roman Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="99.0" layoutY="103.0" text="Usuario: ">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="223.0" layoutY="103.0" text="Label">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="99.0" layoutY="162.0" text="Contraseña:">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="223.0" layoutY="162.0" text="Label">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="99.0" layoutY="216.0" text="Nombre:">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="223.0" layoutY="216.0" text="Label">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="99.0" layoutY="268.0" text="Apellidos:">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="223.0" layoutY="268.0" text="Label">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
