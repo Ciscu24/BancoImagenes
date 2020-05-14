@@ -5,14 +5,14 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proyectociscu.proyectobancoimagenes.controller.AppController">
    <top>
       <MenuBar style="-fx-background-color: rgba(0,0,0,0.3);" BorderPane.alignment="CENTER">
         <menus>
           <Menu mnemonicParsing="false" style="-fx-font-weight: bold;" text="Cuenta">
             <items>
-              <MenuItem mnemonicParsing="false" text="Datos" />
-                  <MenuItem mnemonicParsing="false" text="Cerrar Sesion" />
+              <MenuItem mnemonicParsing="false" onAction="#infoCliente" text="Datos" />
+                  <MenuItem mnemonicParsing="false" onAction="#closeApp" text="Cerrar Sesion" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" style="-fx-font-weight: bold;" text="Imagenes">
@@ -22,7 +22,7 @@
           </Menu>
           <Menu mnemonicParsing="false" style="-fx-font-weight: bold;" text="Ayuda">
             <items>
-              <MenuItem mnemonicParsing="false" text="Acerca de..." />
+              <MenuItem mnemonicParsing="false" onAction="#acercaDe" text="Acerca de..." />
             </items>
           </Menu>
         </menus>

@@ -1,22 +1,22 @@
 package com.proyectociscu.proyectobancoimagenes.model;
 
 public class Client {
-    private int codigo;
-    private String nombre;
-    private String apellidos;
-    private String usuario;
-    private String contraseña;
+    protected int codigo;
+    protected String nombre;
+    protected String apellidos;
+    protected String usuario;
+    protected String contrasena;
 
     public Client() {
         this(-1,"","","","");
     }
     
-    public Client(int codigo, String nombre, String apellidos, String usuario, String contraseña) {
+    public Client(int codigo, String nombre, String apellidos, String usuario, String contrasena) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.usuario = usuario;
-        this.contraseña = contraseña;
+        this.contrasena = contrasena;
     }
 
     public int getCodigo() {
@@ -51,17 +51,17 @@ public class Client {
         this.usuario = usuario;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasena() {
+        return contrasena;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
     @Override
     public String toString() {
-        return "Cliente{" + "codigo=" + codigo + ", nombre=" + nombre + ", apellidos=" + apellidos + ", usuario=" + usuario + ", contrase\u00f1a=" + contraseña + '}';
+        return "Cliente{" + "codigo=" + codigo + ", nombre=" + nombre + ", apellidos=" + apellidos + ", usuario=" + usuario + ", contrase\u00f1a=" + contrasena + '}';
     }
     
 }

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #6BA7D6;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #6BA7D6;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proyectociscu.proyectobancoimagenes.controller.RegistroController">
    <children>
       <Label layoutX="223.0" layoutY="22.0" text="Registrate">
          <font>
@@ -18,26 +18,26 @@
             <Font name="Times New Roman" size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="222.0" layoutY="94.0" prefHeight="25.0" prefWidth="207.0" />
+      <TextField fx:id="usuario" layoutX="222.0" layoutY="94.0" prefHeight="25.0" prefWidth="207.0" />
       <Label layoutX="147.0" layoutY="145.0" text="Contraseña">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="247.0" layoutY="148.0" prefHeight="25.0" prefWidth="207.0" />
+      <TextField fx:id="contrasena" layoutX="247.0" layoutY="148.0" prefHeight="25.0" prefWidth="207.0" />
       <Label layoutX="147.0" layoutY="194.0" text="Nombre">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="222.0" layoutY="242.0" prefHeight="25.0" prefWidth="207.0" />
+      <TextField fx:id="nombre" layoutX="222.0" layoutY="195.0" prefHeight="25.0" prefWidth="207.0" />
       <Label layoutX="147.0" layoutY="241.0" text="Apellido">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="222.0" layoutY="195.0" prefHeight="25.0" prefWidth="207.0" />
-      <Button layoutX="255.0" layoutY="308.0" mnemonicParsing="false" text="Registrar">
+      <TextField fx:id="apellidos" layoutX="222.0" layoutY="242.0" prefHeight="25.0" prefWidth="207.0" />
+      <Button layoutX="255.0" layoutY="308.0" mnemonicParsing="false" onAction="#add" text="Registrar">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>

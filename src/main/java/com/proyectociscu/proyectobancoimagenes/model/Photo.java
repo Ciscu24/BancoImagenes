@@ -1,17 +1,17 @@
 package com.proyectociscu.proyectobancoimagenes.model;
 
 public class Photo {
-    private int codigo;
-    private String titulo;
-    private String categoria;
-    private String descripcion;
-    private String codcliente;
+    protected int codigo;
+    protected String titulo;
+    protected String categoria;
+    protected String descripcion;
+    protected int codcliente;
 
     public Photo() {
-        this(-1,"","","","");
+        this(-1,"","","",0);
     }
 
-    public Photo(int codigo, String titulo, String categoria, String descripcion, String codcliente) {
+    public Photo(int codigo, String titulo, String categoria, String descripcion, int codcliente) {
         this.codigo = codigo;
         this.titulo = titulo;
         this.categoria = categoria;
@@ -51,11 +51,11 @@ public class Photo {
         this.descripcion = descripcion;
     }
 
-    public String getCodcliente() {
+    public int getCodcliente() {
         return codcliente;
     }
 
-    public void setCodcliente(String codcliente) {
+    public void setCodcliente(int codcliente) {
         this.codcliente = codcliente;
     }
 
