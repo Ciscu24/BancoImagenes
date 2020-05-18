@@ -20,13 +20,13 @@ public class PhotoDAO extends Photo implements IPhotoDAO{
         persist = false;
     }
     
-    public PhotoDAO(int codigo, String titulo, String categoria, String descripcion, int codcliente){
-        super(codigo, titulo, categoria, descripcion, codcliente);
+    public PhotoDAO(int codigo, String titulo, String categoria, String descripcion, String ruta, int codcliente){
+        super(codigo, titulo, categoria, descripcion, ruta, codcliente);
         persist = false;
     }
     
-    public PhotoDAO(String titulo, String categoria, String descripcion, int codcliente){
-        super(-1, titulo, categoria, descripcion, codcliente);
+    public PhotoDAO(String titulo, String categoria, String descripcion, String ruta, int codcliente){
+        super(-1, titulo, categoria, descripcion, ruta, codcliente);
         persist = false;
     }
     
@@ -35,6 +35,7 @@ public class PhotoDAO extends Photo implements IPhotoDAO{
         titulo = p.titulo;
         categoria = p.categoria;
         descripcion = p.descripcion;
+        ruta = p.ruta;
         codcliente = p.codcliente;
     }
     
@@ -49,6 +50,14 @@ public class PhotoDAO extends Photo implements IPhotoDAO{
     @Override
     public void setCodigo(int codigo) {
         super.setCodigo(codigo);
+        if(persist){
+            save();
+        }
+    }
+
+    @Override
+    public void setRuta(String ruta) {
+        super.setRuta(ruta);
         if(persist){
             save();
         }
@@ -95,22 +104,24 @@ public class PhotoDAO extends Photo implements IPhotoDAO{
             
             if(this.codigo>0){
                 //UPDATE
-                String q = "UPDATE imagenes SET titulo = ?, categoria = ?, descripcion = ?, codcliente = ? WHERE codigo = ?";
+                String q = "UPDATE imagenes SET titulo = ?, categoria = ?, descripcion = ?, ruta = ?, codcliente = ? WHERE codigo = ?";
                 PreparedStatement ps = csql.prepareStatement(q);
                 ps.setString(1, titulo);
                 ps.setString(2, categoria);
                 ps.setString(3, descripcion);
-                ps.setInt(4, codcliente);
-                ps.setInt(5, codigo);
+                ps.setString(4, ruta);
+                ps.setInt(5, codcliente);
+                ps.setInt(6, codigo);
                 result= ps.executeUpdate();
             }else{
                 //INSERT
-                String q = "INSERT INTO imagenes (codigo,titulo,categoria,descripcion,codcliente) VALUES(NULL,?,?,?,?)";
+                String q = "INSERT INTO imagenes (codigo,titulo,categoria,descripcion,ruta,codcliente) VALUES(NULL,?,?,?,?,?)";
                 PreparedStatement ps = csql.prepareStatement(q, Statement.RETURN_GENERATED_KEYS);
                 ps.setString(1, titulo);
                 ps.setString(2, categoria);
                 ps.setString(3, descripcion);
-                ps.setInt(4, codcliente);
+                ps.setString(4, ruta);
+                ps.setInt(5, codcliente);
                 result = ps.executeUpdate();
                 try(ResultSet generatedKeys = ps.getGeneratedKeys()){
                     if(generatedKeys.next()){
@@ -152,12 +163,12 @@ public class PhotoDAO extends Photo implements IPhotoDAO{
             
             if(rs != null){
                 while(rs.next()){
-                    //int codigo, String titulo, String categoria, String descripcion, int codcliente
                     Photo n = new Photo();
                     n.setCodigo(rs.getInt("codigo"));
                     n.setTitulo(rs.getString("titulo"));
                     n.setCategoria(rs.getString("categoria"));
                     n.setDescripcion(rs.getString("descripcion"));
+                    n.setRuta(rs.getString("ruta"));
                     n.setCodcliente(rs.getInt("codcliente"));
                     result.add(n);
                 }

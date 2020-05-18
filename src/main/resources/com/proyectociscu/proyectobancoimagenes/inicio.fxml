@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #6BA7D6;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #6BA7D6;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proyectociscu.proyectobancoimagenes.controller.PrimaryController">
    <children>
-      <Button layoutX="259.0" layoutY="272.0" mnemonicParsing="false" text="Entrar">
+      <Button layoutX="259.0" layoutY="272.0" mnemonicParsing="false" onAction="#iniciosesionfx" text="Entrar">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>
@@ -29,13 +29,13 @@
             <Font name="Times New Roman" size="18.0" />
          </font>
       </Label>
-      <PasswordField layoutX="173.0" layoutY="223.0" prefHeight="25.0" prefWidth="256.0" />
-      <TextField layoutX="173.0" layoutY="145.0" prefHeight="25.0" prefWidth="256.0" />
+      <PasswordField fx:id="contrasena" layoutX="173.0" layoutY="223.0" prefHeight="25.0" prefWidth="256.0" />
+      <TextField fx:id="usuario" layoutX="173.0" layoutY="145.0" prefHeight="25.0" prefWidth="256.0" />
       <Label layoutX="127.0" layoutY="354.0" text="Si usted no tiene cuenta registrese aqui">
          <font>
             <Font name="Times New Roman" size="14.0" />
          </font></Label>
-      <Button layoutX="367.0" layoutY="349.0" mnemonicParsing="false" text="Registrar">
+      <Button layoutX="367.0" layoutY="349.0" mnemonicParsing="false" onAction="#registro" text="Registrar">
          <font>
             <Font name="Times New Roman" size="14.0" />
          </font></Button>

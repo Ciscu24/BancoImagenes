@@ -4,6 +4,7 @@ module com.proyectociscu.proyectobancoimagenes {
     requires java.sql;
     requires java.xml.bind;
     requires java.base;
+    requires org.apache.commons.codec;
 
     opens com.proyectociscu.proyectobancoimagenes.model to java.xml.bind;
     opens com.proyectociscu.proyectobancoimagenes to javafx.fxml;

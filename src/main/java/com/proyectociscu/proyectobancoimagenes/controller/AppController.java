@@ -5,6 +5,7 @@ import com.proyectociscu.proyectobancoimagenes.model.Client;
 import com.proyectociscu.proyectobancoimagenes.model.ClientDAO;
 import com.proyectociscu.proyectobancoimagenes.model.Photo;
 import com.proyectociscu.proyectobancoimagenes.model.PhotoDAO;
+import com.proyectociscu.proyectobancoimagenes.utils.Utils;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -20,9 +21,7 @@ import java.util.logging.Logger;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.MenuItem;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.Modality;
 
 /**
  * JavaFX App
@@ -30,18 +29,18 @@ import javafx.stage.Modality;
 public class AppController extends Application implements Initializable{
 
     private static Scene scene;
-    public BorderPane rootLayout;
+    public static BorderPane rootLayout;
     public Stage mainStage;
     
     public static List<Client> Clientes = ClientDAO.selectAll();
     public static List<Photo> Photos = PhotoDAO.selectAll();
-
+    
     @Override
     public void start(Stage stage) throws IOException {
         
         rootLayout=(BorderPane)loadFXML("root");
-        rootLayout.setCenter(loadFXML("registro"));
-        scene = new Scene(rootLayout, 640, 480);
+        rootLayout.setCenter(loadFXML("imagenes"));
+        scene = new Scene(rootLayout, 600, 420);
         stage.setScene(scene);
         mainStage = stage;
         stage.show();
@@ -56,7 +55,7 @@ public class AppController extends Application implements Initializable{
         launch();
     }
     
-    public void changeScene(String nombre){
+    public static void changeScene(String nombre){
         try {
             rootLayout.setCenter(loadFXML(nombre));
         } catch (IOException ex) {
@@ -66,24 +65,30 @@ public class AppController extends Application implements Initializable{
          
     @FXML
     public void infoCliente(){
-        changeScene("clientedescripcion");
+        if(PrimaryController.CLIENTE != null){
+            changeScene("clientedescripcion");
+        }else{
+            Utils.showWarning("Error", "Error de validacion", "Usted tiene que estar registrado");
+        }  
     }
+    
     @FXML
     public void acercaDe(){
         changeScene("info");
     }
     @FXML
-    public void closeApp(){
-        System.exit(0);
-    }
-    @FXML
-    public void registro(){
-        changeScene("registro");
+    public void CerrarSesion(){
+        if(PrimaryController.CLIENTE==null){
+            System.exit(0);
+        }else{
+            changeScene("inicio");
+            PrimaryController.CLIENTE = null;
+        }
+        
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
     }
     
     

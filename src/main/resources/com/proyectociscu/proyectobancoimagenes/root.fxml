@@ -12,7 +12,7 @@
           <Menu mnemonicParsing="false" style="-fx-font-weight: bold;" text="Cuenta">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#infoCliente" text="Datos" />
-                  <MenuItem mnemonicParsing="false" onAction="#closeApp" text="Cerrar Sesion" />
+                  <MenuItem mnemonicParsing="false" onAction="#CerrarSesion" text="Cerrar Sesion" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" style="-fx-font-weight: bold;" text="Imagenes">

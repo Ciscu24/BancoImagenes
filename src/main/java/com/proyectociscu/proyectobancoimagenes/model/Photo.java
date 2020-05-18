@@ -5,17 +5,19 @@ public class Photo {
     protected String titulo;
     protected String categoria;
     protected String descripcion;
+    protected String ruta;
     protected int codcliente;
 
     public Photo() {
-        this(-1,"","","",0);
+        this(-1,"","","","",0);
     }
 
-    public Photo(int codigo, String titulo, String categoria, String descripcion, int codcliente) {
+    public Photo(int codigo, String titulo, String categoria, String descripcion, String ruta, int codcliente) {
         this.codigo = codigo;
         this.titulo = titulo;
         this.categoria = categoria;
         this.descripcion = descripcion;
+        this.ruta = ruta;
         this.codcliente = codcliente;
     }
 
@@ -51,6 +53,14 @@ public class Photo {
         this.descripcion = descripcion;
     }
 
+    public String getRuta() {
+        return ruta;
+    }
+
+    public void setRuta(String ruta) {
+        this.ruta = ruta;
+    }
+    
     public int getCodcliente() {
         return codcliente;
     }

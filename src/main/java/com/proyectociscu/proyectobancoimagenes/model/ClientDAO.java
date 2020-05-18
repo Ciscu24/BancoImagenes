@@ -139,7 +139,7 @@ public class ClientDAO extends Client implements IClientDAO{
             String q = "SELECT * FROM clientes";
             
             if(pattern.length()>0){
-                q+=" WHERE nombre LIKE ?";
+                q+=" WHERE usuario LIKE ?";
             }
             
             PreparedStatement ps = csql.prepareStatement(q);

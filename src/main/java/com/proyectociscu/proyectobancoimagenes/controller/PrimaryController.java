@@ -4,28 +4,66 @@ import com.proyectociscu.proyectobancoimagenes.model.Client;
 import com.proyectociscu.proyectobancoimagenes.model.ClientDAO;
 import com.proyectociscu.proyectobancoimagenes.model.Photo;
 import com.proyectociscu.proyectobancoimagenes.model.PhotoDAO;
+import com.proyectociscu.proyectobancoimagenes.utils.Utils;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import org.apache.commons.codec.digest.DigestUtils;
 
 public class PrimaryController implements Initializable{
+    
+    @FXML
+    private TextField usuario;
+    @FXML
+    private PasswordField contrasena;
+    
+    public static Client CLIENTE; 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        System.out.println("Cargando Controlador Primario");
-        //Cargar todos los items de la base de datos
-        //SELECT * FROM item -> print
-        List<Client> resultado = ClientDAO.selectAll();
-        System.out.println(resultado);
-        List<Photo> resultado02 = PhotoDAO.selectAll();
-        System.out.println(resultado02);
+        System.out.println(Utils.buscarCliente("Ciscu24"));
     }
-
-    /*@FXML
-    private void switchToSecondary() throws IOException {
-    AppController.setRoot("secondary");
+    
+    public boolean iniciosesion(String usuario, String contrasena){
+        boolean resultado = false;
+        contrasena = DigestUtils.sha512Hex(contrasena);
+        Client cliente = Utils.buscarCliente(usuario);
+        
+        if(cliente != null && contrasena.equals(cliente.getContrasena())){
+            resultado = true;
+            CLIENTE = cliente;
+        }
+        
+        return resultado;
+    }
+    
+    @FXML
+    public boolean iniciosesionfx(){
+        boolean resultado = false;
+        String usuario = this.usuario.getText();
+        String contrasena = this.contrasena.getText();
+        if(!usuario.equals("") && !contrasena.equals("") && iniciosesion(usuario, contrasena)){
+            resultado = true;
+            Utils.showWarning("Inicio Sesion", "Inicio de sesion correcto", "Pulse el boton para continuar");
+            AppController.changeScene("imagenes");
+        }else{
+            Utils.showWarning("Inicio Sesion", "Inicio de sesion incorrecto", "Verifique que todo esta correcto");
+        }
+        
+        return resultado;
+    }
+    
+    @FXML
+    public void registro(){
+        AppController.changeScene("registro");
+    }
+    
+    /*  public boolean cambioPantalla(){
+    
     }*/
 }
