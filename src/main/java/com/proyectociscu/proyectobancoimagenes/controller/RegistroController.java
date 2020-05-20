@@ -7,9 +7,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 import org.apache.commons.codec.digest.DigestUtils;
 
 public class RegistroController implements Initializable{
@@ -39,12 +37,17 @@ public class RegistroController implements Initializable{
             ClientDAO dao = new ClientDAO(newClient);
             int newId = dao.save();
             newClient.setCodigo(newId);
-            Utils.showWarning("Registro", "Usuario creado correctamente", "Pulse confirmar para continuar");
             AppController.changeScene("inicio");
+            Utils.showInformation("Registro", "Usuario creado correctamente", "Pulse confirmar para continuar");
             
         }else{
             Utils.showWarning("Error de Validacion", "Rellenar huecos", "Usted no relleno completamente");
         }
+    }
+    
+    @FXML
+    private void volver(){
+        AppController.changeScene("inicio");
     }
     
     

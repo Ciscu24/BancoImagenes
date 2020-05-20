@@ -8,6 +8,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #6BA7D6;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proyectociscu.proyectobancoimagenes.controller.RegistroController">
    <children>
+      <Button layoutX="8.0" layoutY="10.0" mnemonicParsing="false" onAction="#volver" text="Volver" />
       <Label layoutX="223.0" layoutY="22.0" text="Registrate">
          <font>
             <Font name="Times New Roman" size="38.0" />

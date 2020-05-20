@@ -17,7 +17,7 @@
           </Menu>
           <Menu mnemonicParsing="false" style="-fx-font-weight: bold;" text="Imagenes">
             <items>
-              <MenuItem mnemonicParsing="false" text="Buscador" />
+              <MenuItem mnemonicParsing="false" onAction="#buscador" text="Buscador" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" style="-fx-font-weight: bold;" text="Ayuda">

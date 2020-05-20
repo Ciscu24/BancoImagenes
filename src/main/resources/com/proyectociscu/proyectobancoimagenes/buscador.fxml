@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #6BA7D6;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proyectociscu.proyectobancoimagenes.controller.BuscadorController">
+   <children>
+      <Label layoutX="130.0" layoutY="57.0" text="¿Qué deseas buscar?">
+         <font>
+            <Font name="Times New Roman" size="41.0" />
+         </font>
+      </Label>
+      <TextField fx:id="buscador" layoutX="127.0" layoutY="169.0" prefHeight="31.0" prefWidth="346.0" promptText="Categoria...">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Label layoutX="143.0" layoutY="209.0" text="Ejemplos: Wallpaper, Coche, Anime, Famoso, Videojuego ..." />
+      <Button layoutX="264.0" layoutY="249.0" mnemonicParsing="false" onAction="#buscadorBoton" text="Buscar...">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

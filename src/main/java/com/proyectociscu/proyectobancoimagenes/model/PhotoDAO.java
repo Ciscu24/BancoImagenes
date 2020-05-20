@@ -150,13 +150,54 @@ public class PhotoDAO extends Photo implements IPhotoDAO{
             String q = "SELECT * FROM imagenes";
             
             if(pattern.length()>0){
-                q+=" WHERE nombre LIKE ?";
+                q+=" WHERE titulo LIKE ?";
             }
             
             PreparedStatement ps = csql.prepareStatement(q);
             
             if(pattern.length()>0){
                 ps.setString(1, pattern+"%");
+            }
+            
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs != null){
+                while(rs.next()){
+                    Photo n = new Photo();
+                    n.setCodigo(rs.getInt("codigo"));
+                    n.setTitulo(rs.getString("titulo"));
+                    n.setCategoria(rs.getString("categoria"));
+                    n.setDescripcion(rs.getString("descripcion"));
+                    n.setRuta(rs.getString("ruta"));
+                    n.setCodcliente(rs.getInt("codcliente"));
+                    result.add(n);
+                }
+            }
+        }catch (SQLException ex) {
+            System.out.println(ex);
+            Logger.getLogger(ClientDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return result;
+    }
+    
+    public static List<Photo> selectAllForBuscador(String pattern){
+        List<Photo> result = new ArrayList<>();
+        
+        try {
+            java.sql.Connection csql = ConnectionUtil.getConnection();
+            String q = "SELECT * FROM imagenes";
+            
+            if(pattern.length()>0){
+                q+=" WHERE categoria LIKE ? or titulo LIKE ? or descripcion LIKE ?";
+            }
+            
+            PreparedStatement ps = csql.prepareStatement(q);
+            
+            if(pattern.length()>0){
+                ps.setString(1, "%"+pattern+"%");
+                ps.setString(2, "%"+pattern+"%");
+                ps.setString(3, "%"+pattern+"%");
             }
             
             ResultSet rs = ps.executeQuery();

@@ -2,7 +2,9 @@ package com.proyectociscu.proyectobancoimagenes.utils;
 
 import com.proyectociscu.proyectobancoimagenes.controller.AppController;
 import com.proyectociscu.proyectobancoimagenes.model.Client;
+import java.util.Optional;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 
 public class Utils {
     public static Client buscarCliente(String usuario){
@@ -26,5 +28,13 @@ public class Utils {
         alert.setContentText(description);
 
         alert.showAndWait();
+    }
+    
+    public static void showInformation(String title, String header, String description) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(header);
+        alert.setContentText(description);
+        Optional<ButtonType> resultado = alert.showAndWait();
     }
 }

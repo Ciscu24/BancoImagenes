@@ -21,6 +21,7 @@ import java.util.logging.Logger;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 
 /**
@@ -37,12 +38,13 @@ public class AppController extends Application implements Initializable{
     
     @Override
     public void start(Stage stage) throws IOException {
-        
         rootLayout=(BorderPane)loadFXML("root");
-        rootLayout.setCenter(loadFXML("imagenes"));
+        rootLayout.setCenter(loadFXML("buscador"));
         scene = new Scene(rootLayout, 600, 420);
         stage.setScene(scene);
         mainStage = stage;
+        stage.setTitle("Pixels Bank");
+        stage.getIcons().add(new Image("File:logo.png"));
         stage.show();
     }
 
@@ -70,6 +72,15 @@ public class AppController extends Application implements Initializable{
         }else{
             Utils.showWarning("Error", "Error de validacion", "Usted tiene que estar registrado");
         }  
+    }
+    
+    @FXML
+    public void buscador(){
+        if(PrimaryController.CLIENTE != null){
+            changeScene("buscador");
+        }else{
+            Utils.showWarning("Error", "Error de validacion", "Usted tiene que iniciar sesion");
+        }
     }
     
     @FXML

@@ -66,9 +66,13 @@ public class InfoClienteController implements Initializable{
         }
         ClientDAO c = new ClientDAO(PrimaryController.CLIENTE);
         c.save();
-        Utils.showWarning("Editar", "Cambios hechos correctamente", "Guardando en la base de datos");
+        Utils.showInformation("Editar", "Cambios hechos correctamente", "Guardando en la base de datos");
         
         AppController.changeScene("clientedescripcion");
+    }
+    
+    public void volver(){
+        AppController.changeScene("imagenesfx");
     }
     
     
