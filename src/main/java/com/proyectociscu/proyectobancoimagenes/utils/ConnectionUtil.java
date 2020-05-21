@@ -32,6 +32,8 @@ public class ConnectionUtil {
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(ConnectionUtil.class.getName()).log(Level.SEVERE, null, ex);
             } catch (SQLException ex) {
+                System.out.println("Falta la base de datos");
+                System.exit(0);
                 Logger.getLogger(ConnectionUtil.class.getName()).log(Level.SEVERE, null, ex);
             }
         }

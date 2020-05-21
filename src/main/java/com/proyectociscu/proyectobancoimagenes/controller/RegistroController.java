@@ -32,17 +32,32 @@ public class RegistroController implements Initializable{
         String apellidos = this.apellidos.getText();
         
         if(usuario.length()>0 && contrasena.length()>0 && nombre.length()>0 && apellidos.length()>0){
-            Client newClient = new Client(-1,nombre,apellidos,usuario,contrasena);
-            AppController.Clientes.add(newClient);
-            ClientDAO dao = new ClientDAO(newClient);
-            int newId = dao.save();
-            newClient.setCodigo(newId);
-            AppController.changeScene("inicio");
-            Utils.showInformation("Registro", "Usuario creado correctamente", "Pulse confirmar para continuar");
-            
+            if(!usuarioRepetido(usuario)){
+                Client newClient = new Client(-1,nombre,apellidos,usuario,contrasena);
+                AppController.Clientes.add(newClient);
+                ClientDAO dao = new ClientDAO(newClient);
+                int newId = dao.save();
+                newClient.setCodigo(newId);
+                AppController.changeScene("inicio");
+                Utils.showInformation("Registro", "Usuario creado correctamente", "Pulse confirmar para continuar");
+            }else{
+                Utils.showWarning("Error de Validacion", "Usuario ya escogido", "Registrese con otro usuario por favor");
+            }
         }else{
             Utils.showWarning("Error de Validacion", "Rellenar huecos", "Usted no relleno completamente");
         }
+    }
+    
+    private boolean usuarioRepetido(String usuario){
+        boolean resultado = false;
+        
+        for(Client c: AppController.Clientes){
+            if(c.getUsuario().equals(usuario)){
+                resultado = true;
+            }
+        }
+        
+        return resultado;
     }
     
     @FXML

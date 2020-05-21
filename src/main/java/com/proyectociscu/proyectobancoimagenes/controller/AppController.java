@@ -39,12 +39,12 @@ public class AppController extends Application implements Initializable{
     @Override
     public void start(Stage stage) throws IOException {
         rootLayout=(BorderPane)loadFXML("root");
-        rootLayout.setCenter(loadFXML("buscador"));
+        rootLayout.setCenter(loadFXML("inicio"));
         scene = new Scene(rootLayout, 600, 420);
         stage.setScene(scene);
         mainStage = stage;
         stage.setTitle("Pixels Bank");
-        stage.getIcons().add(new Image("File:logo.png"));
+        stage.getIcons().add(new Image("File:utils\\icon.png"));
         stage.show();
     }
 
