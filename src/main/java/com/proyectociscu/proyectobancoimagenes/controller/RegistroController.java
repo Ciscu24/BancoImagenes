@@ -53,7 +53,7 @@ public class RegistroController implements Initializable{
      * @param usuario el nombre de usuario
      * @return devuelve true si el usuario esta repetido y false si no
      */
-    private boolean usuarioRepetido(String usuario){
+    public boolean usuarioRepetido(String usuario){
         boolean resultado = false;
         
         for(Client c: AppController.Clientes){
