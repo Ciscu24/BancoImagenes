@@ -4,8 +4,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #6BA7D6;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #6BA7D6;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="90.0" layoutY="145.0" text="Si usted tiene algun problema con nuestra aplicación">
          <font>
@@ -17,9 +16,15 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="196.0" layoutY="221.0" text="ciscu6@gmail.com">
+      <Label layoutX="196.0" layoutY="221.0" text="ciscu6@gmail.com" textFill="#eb9f3d">
          <font>
             <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="11.0" layoutY="353.0" text="Mientras estás mirando las imágenes puedes escuchar la música en la apliación                    de mi amigo Anto" />
+      <Label layoutX="431.0" layoutY="353.0" text="Music 24/7" textFill="ORANGE">
+         <font>
+            <Font name="System Bold" size="12.0" />
          </font>
       </Label>
    </children>

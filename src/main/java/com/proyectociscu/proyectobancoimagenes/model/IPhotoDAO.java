@@ -4,5 +4,7 @@ import java.util.List;
 
 public interface IPhotoDAO {
     int save();
-    int remove();
+    int remove();    
+    void persist();
+    public void detatch();
 }

@@ -5,6 +5,7 @@ import com.proyectociscu.proyectobancoimagenes.model.Client;
 import com.proyectociscu.proyectobancoimagenes.model.ClientDAO;
 import com.proyectociscu.proyectobancoimagenes.model.Photo;
 import com.proyectociscu.proyectobancoimagenes.model.PhotoDAO;
+import com.proyectociscu.proyectobancoimagenes.utils.ConnectionUtil;
 import com.proyectociscu.proyectobancoimagenes.utils.Utils;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -24,9 +25,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 
-/**
- * JavaFX App
- */
+
 public class AppController extends Application implements Initializable{
 
     private static Scene scene;
@@ -57,6 +56,10 @@ public class AppController extends Application implements Initializable{
         launch();
     }
     
+    /**
+     * Funcion que cambia la escena del programa
+     * @param nombre El nombre de la escena
+     */
     public static void changeScene(String nombre){
         try {
             rootLayout.setCenter(loadFXML(nombre));
@@ -64,7 +67,10 @@ public class AppController extends Application implements Initializable{
             Logger.getLogger(AppController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-         
+    
+    /**
+     * Cambia la escena a la informacion del cliente
+     */
     @FXML
     public void infoCliente(){
         if(PrimaryController.CLIENTE != null){
@@ -74,6 +80,9 @@ public class AppController extends Application implements Initializable{
         }  
     }
     
+    /**
+     * Cambia la escena al buscador
+     */    
     @FXML
     public void buscador(){
         if(PrimaryController.CLIENTE != null){
@@ -83,13 +92,21 @@ public class AppController extends Application implements Initializable{
         }
     }
     
+    /**
+     * Cambia la escena al Acerca De...
+     */
     @FXML
     public void acercaDe(){
         changeScene("info");
     }
+    
+    /**
+     * Cambia la escena al inicio para cerrar sesion o cierra la aplicacion
+     */
     @FXML
     public void CerrarSesion(){
         if(PrimaryController.CLIENTE==null){
+            ConnectionUtil.closeConnection();
             System.exit(0);
         }else{
             changeScene("inicio");

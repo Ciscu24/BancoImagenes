@@ -29,7 +29,7 @@
             <Font name="Times New Roman" size="18.0" />
          </font>
       </Label>
-      <PasswordField fx:id="contrasena" layoutX="173.0" layoutY="223.0" prefHeight="25.0" prefWidth="256.0" />
+      <PasswordField fx:id="contrasena" layoutX="173.0" layoutY="223.0" onAction="#iniciosesionfx" prefHeight="25.0" prefWidth="256.0" />
       <TextField fx:id="usuario" layoutX="173.0" layoutY="145.0" prefHeight="25.0" prefWidth="256.0" />
       <Label layoutX="127.0" layoutY="354.0" text="Si usted no tiene cuenta registrese aqui">
          <font>

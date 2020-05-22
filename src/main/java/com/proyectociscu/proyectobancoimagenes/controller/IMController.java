@@ -59,18 +59,13 @@ public class IMController implements Initializable {
         }
         
     }
-
-    private ImageView createImageView(String ruta) {
-        ImageView imageView = null;
-        Image image;
-        image = new Image("File:" + ruta, 150, 0, true, true);
-
-        imageView = new ImageView(image);
-        imageView.setFitWidth(150);
-
-        return imageView;
-    }
-
+    
+    /**
+     * Crea la ImageView con un MouseEvent para poder pinchar en la imagen
+     * y abrirla
+     * @param p La imagen en cuestion
+     * @return Devuelve la imagen en la imageView
+     */
     private ImageView createImageView(Photo p) {
         ImageView imageView = null;
         Image image;
@@ -107,10 +102,10 @@ public class IMController implements Initializable {
                         borderPane.setBottom(vbox);
                         Stage newStage = new Stage();
                         newStage.setTitle(p.getTitulo());
+                        newStage.getIcons().add(new Image("File:utils\\icon.png"));
                         Scene scene = new Scene(borderPane, Color.BLACK);
                         newStage.setScene(scene);
                         newStage.show();
-                        
                     }
                 }
             }

@@ -48,6 +48,11 @@ public class RegistroController implements Initializable{
         }
     }
     
+    /**
+     * Funcion para saber si el usuario esta repetido
+     * @param usuario el nombre de usuario
+     * @return devuelve true si el usuario esta repetido y false si no
+     */
     private boolean usuarioRepetido(String usuario){
         boolean resultado = false;
         

@@ -17,6 +17,7 @@ public class PrimaryController implements Initializable {
     @FXML
     private PasswordField contrasena;
     
+    // Variable que guarda el usuario que ha iniciado sesion
     public static Client CLIENTE; 
 
     @Override

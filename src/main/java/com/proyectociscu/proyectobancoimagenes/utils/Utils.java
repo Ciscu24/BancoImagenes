@@ -7,6 +7,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 
 public class Utils {
+    /**
+     * Busca un cliente por usuario
+     * @param usuario El usuario en cuestion
+     * @return El cliente en cuestion
+     */
     public static Client buscarCliente(String usuario){
         Client cliente = null;
         boolean aux = false;
@@ -20,7 +25,7 @@ public class Utils {
         
         return cliente;
     }
-    
+
     public static void showWarning(String title, String header, String description) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle(title);
@@ -36,5 +41,19 @@ public class Utils {
         alert.setHeaderText(header);
         alert.setContentText(description);
         Optional<ButtonType> resultado = alert.showAndWait();
+    }
+    
+    public static boolean showConfirm() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmar");
+        alert.setHeaderText("A punto de eliminar");
+        alert.setContentText("¿Desea borrar la cuenta?");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

@@ -13,7 +13,7 @@
             <Font name="Times New Roman" size="41.0" />
          </font>
       </Label>
-      <TextField fx:id="buscador" layoutX="127.0" layoutY="169.0" prefHeight="31.0" prefWidth="346.0" promptText="Categoria...">
+      <TextField fx:id="buscador" layoutX="127.0" layoutY="169.0" onAction="#buscadorBoton" prefHeight="31.0" prefWidth="346.0" promptText="Categoria...">
          <font>
             <Font size="15.0" />
          </font>

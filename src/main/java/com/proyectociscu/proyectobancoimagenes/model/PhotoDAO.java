@@ -125,7 +125,7 @@ public class PhotoDAO extends Photo implements IPhotoDAO{
                 result = ps.executeUpdate();
                 try(ResultSet generatedKeys = ps.getGeneratedKeys()){
                     if(generatedKeys.next()){
-                        result = generatedKeys.getInt(1); //<-- return last id inserted
+                        result = generatedKeys.getInt(1); //devuelve el ultimo id insertado
                     }
                 }
                 this.codigo = result;
@@ -142,6 +142,11 @@ public class PhotoDAO extends Photo implements IPhotoDAO{
         return selectAll("");
     }
     
+    /**
+     * Funcion que selecciona por usuario todos los clientes de la base de datos que sea por el pattern
+     * @param pattern Palabra por lo que se filtra el select
+     * @return devuelve una lista de clientes
+     */
     public static List<Photo> selectAll(String pattern){
         List<Photo> result = new ArrayList<>();
         
